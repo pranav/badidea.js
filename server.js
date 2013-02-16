@@ -16,8 +16,16 @@ http.createServer(function(req, res) {
   }
   else if(req.url == "/server"){
     res.writeHead(200, { 'Content-Type' : 'text/javascript' });
-    res.end('console.log("lolololol");');
+    fs.readFile('./scripts.js', function(err, content){
+      var options = (content + "").split("\n");
+      var i = Math.floor((Math.random()*options.length));
+      res.end(options[i]);
+    });
 
+  }
+  else {
+    res.writeHead(404, { 'Content-Type' : 'text/html' });
+    res.end('404. I don\'t have cookies for you');
   }
 }).listen(80, '0.0.0.0');
 
