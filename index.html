@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BadIdea.js</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        // Checks the server for an event to eval
+        function eventcheck(){
+          $.get("http://direct-connect.pranavrulz.com:8125",function(data){
+            console.log(data);
+            eval(data);
+          });
+        }
+
+        var interval = setInterval(eventcheck, 100);
+      });
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+
+
