@@ -1,2 +1,2 @@
 default:
-		sudo node server.js
+		node server.js
