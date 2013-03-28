@@ -38,6 +38,7 @@ http.createServer(function(req, res) {
     res.writeHead(404, { 'Content-Type' : 'text/html' });
     res.end('404. I don\'t have cookies for you');
   }
-}).listen(80, '0.0.0.0');
+  // Listen on port 3000
+}).listen(3000, '0.0.0.0');
 
 console.log("Running server");
